@@ -1,69 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Scroll-Triggered Video Play with Fixed Position</title>
-    <style>
-        /* Styling for the scrollable content area */
-        #scrollArea {
-            height: 500px; /* Adjust the height as needed */
-            overflow-y: scroll;
-            padding: 20px;
-            border: 1px solid #ccc;
-            position: absolute;
-            top: 300px; /* Adjust as needed */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%; /* Adjust the width as needed */
-        }
-
-        /* Fixed position styling for the video */
-        #scrollVideo {
-            position: fixed;
-            top: 10px; /* Adjust as needed */
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 80%;
-            height: auto;
-        }
-
-        /* Extra content to make the scroll area scrollable */
-        .content {
-            height: 2000px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Scrubbing</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
+    <div id="set-height"></div>
+    <p id="time"></p>
+    <video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
+      <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="trafficv2.mov"></source>
+    </video>
 
-<video id="scrollVideo" width="320" height="240" muted autoplay>
-    <source src="curtain.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+    
 
-<div id="scrollArea">
-    <div class="content">
-        <!-- Your scrollable content goes here -->
-    </div>
-</div>
-
-<script>
-    let video = document.getElementById('scrollVideo');
-    let timeout;
-    let scrollArea = document.getElementById('scrollArea');
-
-    scrollArea.addEventListener('scroll', function() {
-        if (video.paused) {
-            video.play();
-        }
-
-        // Clear the previous timeout if it exists
-        clearTimeout(timeout);
-
-        // Set a new timeout
-        timeout = setTimeout(() => {
-            video.pause();
-        }, 1000); // 1000 milliseconds = 1 second
-    });
-</script>
-
+    <!-- Link to external JavaScript file -->
+    <script src="script2.js"></script>
 </body>
 </html>
