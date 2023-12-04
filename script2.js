@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const videoId = Math.random() < 0.5 ? 'v3' : 'v4';
             const video = document.getElementById(videoId);
             const frameTimes = [0, 20, 30, 15]; // Timestamps in seconds for frames
-            preparePrintLayout(video, frameTimes);
+
+            // Introduce a delay before preparing the print layout
+            setTimeout(() => {
+                preparePrintLayout(video, frameTimes);
+            }, 3000); // 5000 milliseconds delay (5 seconds)
 
             printDialogTriggered = true;
         }
