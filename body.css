@@ -1,0 +1,30 @@
+body {
+  display: grid;
+  grid-template-rows: 20vh 60vh 20vh; /* Three rows: top, middle, bottom */
+  grid-template-columns: 1fr; /* One column taking full width */
+  justify-items: center; /* Center content horizontally */
+}
+
+#set-height {
+    display: block;
+  }
+
+  p font-family helvetica {
+    font-size: 24px;
+  }
+
+
+  video {
+    grid-row: 2; /* Place the video in the second row */
+    width: 150px; /* Adjust as per your requirement */
+    max-width: 600px; /* Maximum width of the video */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+
+/* #v0 {
+  position: fixed;
+  top: 200px;
+  left: 50px;
+  width: 20%;
+} */
